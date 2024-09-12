@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Upload Countriles From Excel";
+}
+
+
+<!--breadcrum starts-->
+<div class="flex">
+    <div class="flex-1">
+        <div class="text-grey">
+            <span>Contacts</span>
+            <i class="fa-solid fa-caret-right"></i>
+            <span class="text-grey">Persons</span>
+            <i class="fa-solid fa-caret-right"></i>
+            <span class="text-grey">Upload From Excel</span>
+        </div>
+    </div>
+</div>
+<!--breadcrum ends-->
+<div class="form-container">
+    <h2 class="text-large">Upload Countries From Excel</h2>
+
+    <form asp-action="UploadFromExcel" asp-controller="Countries" method="post" enctype="multipart/form-data">
+        <div class="form-field flex">
+            <div class="w-25">
+                <label class="form-label pt">Choose An Excel File</label>
+            </div>
+            <div class="flex-1">
+                <input type="file" name="excelFile" class="form-input" />
+                <p class="text-light-green">Give CountryNames in excel file if there are not existed in the database and the file name should be always Countries</p>
+                <div class="text-red">@ViewBag.ErrorMessage</div>
+                <div class="text-green">@ViewBag.Message</div>
+            </div>
+        </div>
+        <div class="form-field flex">
+            <div class="w-25"></div>
+            <div class="flex-1">
+                <button type="submit" class="button button-green-back">Upload</button>
+            </div>
+        </div>
+    </form>
+</div>

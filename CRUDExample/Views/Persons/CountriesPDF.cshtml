@@ -1,0 +1,24 @@
+﻿@model IEnumerable<CountryResponse>
+@{
+    Layout = null;
+}
+
+<h1>Country Details</h1>
+
+<link href="@("http://"+ Context.Request.Host.ToString() + "/StyleSheet.css")" rel="stylesheet" />
+<h1>Countries</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Country Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (CountryResponse country in Model)
+        {
+            <tr>
+                <td>@country.CountryName</td>
+            </tr>
+        }
+    </tbody>
+</table>

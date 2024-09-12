@@ -13,7 +13,8 @@ namespace Entities.Migrations
                 name: "Countries",
                 columns: table => new
                 {
-                    CountryID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CountryID = table.Column<Guid>(type: "uniqueidentifier",
+                    nullable: false ),
                     CountryName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>

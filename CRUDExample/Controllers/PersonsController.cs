@@ -124,7 +124,11 @@ namespace CRUDExample.Controllers
 
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="personId"></param>
+        /// <returns></returns>
         [Route("[action]/{personId}")]
         [TypeFilter(typeof(TokenResultFilter))]
 

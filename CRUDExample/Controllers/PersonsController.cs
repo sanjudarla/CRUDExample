@@ -53,12 +53,25 @@ namespace CRUDExample.Controllers
         }
 
 
+
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="searchBy"></param>
+        /// <param name="searchString"></param>
+        /// <param name="sortBy"></param>
+        /// <param name="sortOrder"></param>
+        /// <returns></returns>
+
         [Route("[action]")]
         [Route("/")]
         [ServiceFilter(typeof(PersonsListActionFilter), Order = 4)]
         [ResponseHeaderFilterFactory("my-Key-from-action", "my-Value-from-action", 1)]
         [TypeFilter(typeof(PersonsListResultsFilter))]
         [SkipFilter]
+        
         public async Task<IActionResult> Index(string searchBy, string? searchString,
             string sortBy = nameof(PersonResponse.PersonName),
             SortOrderOptions sortOrder = SortOrderOptions.ASC)
@@ -76,7 +89,10 @@ namespace CRUDExample.Controllers
         }
 
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
 
         [HttpGet]
         [Route("[action]")]
